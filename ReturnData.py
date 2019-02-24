@@ -75,4 +75,3 @@ with open(temp_out_file) as f1, open(out_file, "w") as f2:
                 f2.write(line)
         
 os.remove(temp_out_file)
-        

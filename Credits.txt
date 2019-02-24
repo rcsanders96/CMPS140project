@@ -1,0 +1,4 @@
+Here's a list of all the articles/people that helped us:
+	W3 Schools (Help with html)
+	Geeks For Geeks (Help with general questions)
+	Stack Overflow (Help with general questions)
