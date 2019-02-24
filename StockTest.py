@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dataset_train = pd.read_csv('NSE-TATAGLOBAL.csv')
+dataset_train = pd.read_csv('MUtrainingData.csv')
 training_set = dataset_train.iloc[:, 1:2].values
 
 dataset_train.head()
@@ -13,7 +13,7 @@ training_set_scaled = sc.fit_transform(training_set)
 
 X_train = []
 y_train = []
-for i in range(60, 2035):
+for i in range(60, 1760): #range(60, 2035):
     X_train.append(training_set_scaled[i-60:i, 0])
     y_train.append(training_set_scaled[i, 0])
 X_train, y_train = np.array(X_train), np.array(y_train)
@@ -45,10 +45,10 @@ regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
 regressor.fit(X_train, y_train, epochs = 100, batch_size = 32)
 
-dataset_test = pd.read_csv('tatatest.csv')
+dataset_test = pd.read_csv('MUtestingData.csv')
 real_stock_price = dataset_test.iloc[:, 1:2].values
 
-dataset_total = pd.concat((dataset_train['Open'], dataset_test['Open']), axis = 0)
+dataset_total = pd.concat((dataset_train['open'], dataset_test['open']), axis = 0)
 inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values
 inputs = inputs.reshape(-1,1)
 inputs = sc.transform(inputs)
@@ -65,10 +65,10 @@ print(predicted_stock_price)
 print("Actual Price:")
 print(real_stock_price)
 
-plt.plot(real_stock_price, color = 'black', label = 'TATA Stock Price')
-plt.plot(predicted_stock_price, color = 'green', label = 'Predicted TATA Stock Price')
-plt.title('TATA Stock Price Prediction')
+plt.plot(real_stock_price, color = 'black', label = 'MU Stock Price')
+plt.plot(predicted_stock_price, color = 'green', label = 'Predicted MU Stock Price')
+plt.title('MU Stock Price Prediction')
 plt.xlabel('Time')
-plt.ylabel('TATA Stock Price')
+plt.ylabel('MU Stock Price')
 plt.legend()
 plt.show()
