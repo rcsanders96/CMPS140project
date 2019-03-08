@@ -1,8 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import csv
 
-dataset_train = pd.read_csv('NSE-TATAGLOBAL.csv')
+dataset_train = pd.read_csv('StockData/Training_Data.csv')
+with open('StockData/Training_Data.csv',"r") as f:
+    reader = csv.reader(f,delimiter = ",")
+    data = list(reader)
+    row_count = len(data)-1
+print(row_count)
 training_set = dataset_train.iloc[:, 1:5].values
 
 dataset_train.head()
@@ -13,7 +19,7 @@ training_set_scaled = sc.fit_transform(training_set)
 
 X_train = []
 y_train = []
-for i in range(60, 2035):
+for i in range(60, row_count):
     X_train.append(training_set_scaled[i-60:i, 0])
     y_train.append(training_set_scaled[i, 0:])
 X_train, y_train = np.array(X_train), np.array(y_train)
@@ -51,16 +57,21 @@ regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
 regressor.fit(X_train, y_train, epochs = 100, batch_size = 32)
 
-dataset_test = pd.read_csv('tatatest.csv')
+dataset_test = pd.read_csv('StockData/Test_Data.csv')
+with open('StockData/Test_Data.csv',"r") as f:
+    reader = csv.reader(f,delimiter = ",")
+    data = list(reader)
+    row_count = len(data)-1
+print(row_count)
 real_stock_price = dataset_test.iloc[:, 1:5].values
 
-dataset_total = pd.concat((dataset_train['Open'], dataset_test['Open']), axis = 0)
+dataset_total = pd.concat((dataset_train['open'], dataset_test['open']), axis = 0)
 print(dataset_total.shape)
 inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values
 inputs = inputs.reshape(-1,1)
 inputs = sc.fit_transform(inputs)
 X_test = []
-for i in range(60, 76):
+for i in range(60, row_count):
     X_test.append(inputs[i-60:i, 0])
 X_test = np.array(X_test)
 print(inputs.shape)

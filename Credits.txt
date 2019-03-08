@@ -2,3 +2,13 @@ Here's a list of all the articles/people that helped us:
 	W3 Schools (Help with html)
 	Geeks For Geeks (Help with general questions)
 	Stack Overflow (Help with general questions)
+
+
+	https://stackoverflow.com/questions/5158160/python-get-datetime-for-3-years-ago-today
+	https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
+	https://www.w3schools.com/python/python_arrays.asp
+	https://stackoverflow.com/questions/14320909/efficiently-checking-that-string-consists-of-one-character-in-python
+	https://stackoverflow.com/questions/5158160/python-get-datetime-for-3-years-ago-today
+	https://stackoverflow.com/questions/15509345/extracting-double-digit-months-and-days-from-a-python-date
+	https://www.programiz.com/python-programming/datetime/strftime
+	https://learnandlearn.com/python-programming/python-reference/python-get-current-date
