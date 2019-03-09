@@ -4,7 +4,9 @@ Here's a list of all the articles/people that helped us:
 	Stack Overflow (Help with general questions)
 	Keras Deep Learning Library for building and training models: https://keras.io/
 	TensorFlow backend: https://www.tensorflow.org/
-
+	The API to get the data was Alpha Vantage (https://www.alphavantage.co/)
+	And AI example was an article titled "Using a Keras Long Short-Term Memory (LSTM) Model to Predict Stock Prices"  from KDnuggets 		(https://www.kdnuggets.com/2018/11/keras-long-short-term-memory-lstm-model-predict-stock-prices.html)
+	
 	https://stackoverflow.com/questions/5158160/python-get-datetime-for-3-years-ago-today
 	https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
 	https://www.w3schools.com/python/python_arrays.asp
