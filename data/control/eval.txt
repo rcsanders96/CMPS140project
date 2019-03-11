@@ -1,0 +1,7 @@
+True: 166.0
+Out of: 320.0
+Proportion: 0.51875
+Average open error: 30.454241932159647
+Average change error: 1.8461190396249285
+Average open error ratio: 0.3358037020585863
+Average change error ratio: 2.072423900628589
