@@ -1,6 +1,7 @@
 This folder contains the output data of our testing.
 
-The .csv files in this directory are the actual data for the 20 stocks we tested
+The "train.csv" files in this directory are the training data for the 20 stocks
+The "test.csv" files in this directory are the actual data for the 20 stocks we tested
 
 The subdirectories contain three types of files:
 -"-output.csv" files are the ouputs of the models with various hyperparameters
