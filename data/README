@@ -1,0 +1,17 @@
+This folder contains the output data of our testing.
+
+The .csv files in this directory are the actual data for the 20 stocks we tested
+
+The subdirectories contain three types of files:
+-"-output.csv" files are the ouputs of the models with various hyperparameters
+-"-error.csv" files add additional evaluation information
+-"eval.txt" contains information about average errors using these hyperparameters
+-"daily-evaluation.txt" contains information about how the accuracy of the model changes based on the day
+-"-graph.png" files graph the predicted opening prices with the real opening prices of each stocks
+
+The subdirectories are as follows:
+-"control" uses the adam optimizer, mean-squared loss, and drops out 20% of nodes.
+	All other subdirectories only change one of these hyperparameters each
+-"dropout1" only drops out 10% of nodes
+-"mean_absolute" uses the mean-absolute loss function
+-"sgd" uses the SGD optimizer
